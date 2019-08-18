@@ -1,0 +1,45 @@
+Objects
+
+	- Name: Ingredient
+		- Properties:
+			id(int)
+			name(string)
+			calories(int)
+
+	- Nutrition Facts
+		- Properties
+			id(int)
+			name(string)
+			serving size(double)
+			calories(int)
+			Nutritional Property(object: has many)
+
+	- Nutritional Property
+		- Properties
+			id(int)
+			name(string)
+			amount(double) - store in mg?
+			daily value percentage(double)
+
+	- Rating
+		- Properties
+			id(id)
+			rating(int or enum) restrict rating to 0~5 but keep in mind that an average can be a decimal
+			comment(string)
+			user id(int) id of the user who created the rating
+
+	- Recipe Step
+		- Properties
+			id(int)
+			name(string)
+			order(int)
+
+	- Name: Recipe
+		- Properties:
+			id(int)
+			ingredients(object: has many)
+			nutrition facts(object: has one)
+			rating(object: has many)
+			recipe step(object: has many)
+			description(string)
+			user id(int) id of the user who created the recipe
